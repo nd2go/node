@@ -227,7 +227,7 @@ int uv_loop_init(uv_loop_t* loop) {
   uv__once_init();
 
   /* Create an I/O completion port */
-  loop->iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 1);
+  loop->iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, NULL, 0, 2);
   if (loop->iocp == NULL)
     return uv_translate_sys_error(GetLastError());
 
